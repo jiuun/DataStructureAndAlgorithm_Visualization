@@ -1,17 +1,22 @@
 #include "QuickSortVisualizer.h"
 
 #include <cassert>
+#include <conio.h>
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 namespace sort
 {
-	void QuickSortVisualizer::VisualizeSorting(vector<int>& nums)
+	eViewMode QuickSortVisualizer::sViewMode = eViewMode::ONE_BY_ONE;
+
+	void QuickSortVisualizer::VisualizeSorting(vector<int>& nums, ePivotPos pivotPos, eViewMode viewMode)
 	{
 		vector<Node> datas;
 		datas.reserve(nums.size());
 
+		sViewMode = viewMode;
 
 		for (size_t i = 0; i < nums.size(); ++i)
 		{
@@ -19,7 +24,22 @@ namespace sort
 		}
 		PrintData(datas);
 
-		visualizeSortingRecursive(datas, 0, static_cast<int>(datas.size() - 1));
+		switch (pivotPos)
+		{
+		case LEFT:
+			visualizeSortingRecursiveLeftPivot(datas, 0, static_cast<int>(datas.size() - 1));
+			break;
+		case RIGHT:
+			visualizeSortingRecursive(datas, 0, static_cast<int>(datas.size() - 1));
+			break;
+		default:
+			assert(false);
+		}
+
+		for (size_t i = 0; i < nums.size(); ++i)
+		{
+			nums[i] = datas[i].GetData();
+		}
 	}
 
 	void QuickSortVisualizer::visualizeSortingRecursive(vector<Node>& datas, int leftIndex, int rightIndex)
@@ -30,7 +50,7 @@ namespace sort
 		}
 
 		initNodes(datas, leftIndex, rightIndex);
-		
+
 		int pivotIndex = rightIndex;
 		int currLeftIndex = leftIndex - 1;
 
@@ -46,7 +66,7 @@ namespace sort
 			if (datas[i].GetData() < datas[pivotIndex].GetData())
 			{
 				++currLeftIndex;
-				moveLeft(datas, currLeftIndex);
+				moveColorLeft(datas, currLeftIndex);
 
 				PrintData(datas);
 
@@ -65,8 +85,6 @@ namespace sort
 			datas[i].OffCurrnetIndex();
 		}
 
-
-		
 		pivotIndex = currLeftIndex + 1;
 
 		swapInt(datas[pivotIndex], datas[rightIndex]);
@@ -78,7 +96,60 @@ namespace sort
 		visualizeSortingRecursive(datas, pivotIndex + 1, rightIndex);
 	}
 
-	void QuickSortVisualizer::PrintData(vector<Node>& datas) const
+	void QuickSortVisualizer::visualizeSortingRecursiveLeftPivot(vector<Node>& datas, int leftIndex, int rightIndex)
+	{
+		if (leftIndex >= rightIndex)
+		{
+			datas[rightIndex].Complete();
+			return;
+		}
+
+		initNodes(datas, leftIndex, rightIndex);
+
+		int pivotIndex = leftIndex;
+		int currRightIndex = rightIndex + 1;
+
+		datas[pivotIndex].SetColorType(eColorType::QUICKSORT_RIGHT);
+		datas[currRightIndex - 1].SetColorType(eColorType::QUICKSORT_LEFT);
+
+		for (int i = rightIndex; i > leftIndex; --i)
+		{
+			datas[i].OnCurrnetIndex();
+			PrintData(datas);
+
+			if (datas[i].GetData() > datas[pivotIndex].GetData())
+			{
+				--currRightIndex;
+				moveColorRight(datas, currRightIndex);
+
+				PrintData(datas);
+
+				swapInt(datas[currRightIndex], datas[i]);
+
+				if (currRightIndex != i)
+				{
+					PrintData(datas);
+				}
+			}
+			else
+			{
+				PrintData(datas);
+			}
+
+			datas[i].OffCurrnetIndex();
+		}
+
+		pivotIndex = currRightIndex - 1;
+
+		swapInt(datas[pivotIndex], datas[leftIndex]);
+		datas[pivotIndex].Complete();
+
+		PrintData(datas);
+		visualizeSortingRecursiveLeftPivot(datas, leftIndex, pivotIndex - 1);
+		visualizeSortingRecursiveLeftPivot(datas, pivotIndex + 1, rightIndex);
+	}
+
+	void QuickSortVisualizer::PrintData(vector<Node>& datas)
 	{
 		for (size_t i = 0; i < datas.size(); ++i)
 		{
@@ -149,6 +220,16 @@ namespace sort
 				cout << "    ";
 			}
 		}
+
+		cout << "  Press the Enter to Continue ";
+		string trash;
+		getline(cin, trash);
+
+		if (sViewMode == eViewMode::ONE_BY_ONE)
+		{
+			system("cls");
+		}
+
 		cout << endl;
 	}
 
@@ -169,10 +250,16 @@ namespace sort
 		}
 	}
 
-	void QuickSortVisualizer::moveLeft(vector<Node>& datas, int currLeftIndex)
+	void QuickSortVisualizer::moveColorLeft(vector<Node>& datas, int currLeftIndex)
 	{
 		datas[currLeftIndex].SetColorType(eColorType::QUICKSORT_DEFAULT);
 		datas[currLeftIndex + 1].SetColorType(eColorType::QUICKSORT_LEFT);
+	}
+
+	void QuickSortVisualizer::moveColorRight(vector<Node>& datas, int currRightIndex)
+	{
+		datas[currRightIndex].SetColorType(eColorType::QUICKSORT_DEFAULT);
+		datas[currRightIndex - 1].SetColorType(eColorType::QUICKSORT_LEFT);
 	}
 
 	void QuickSortVisualizer::swapInt(Node& left, Node& right)
