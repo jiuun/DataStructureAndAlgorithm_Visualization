@@ -3,6 +3,7 @@
 #include <vector>
 
 #include "Node.h"
+#include "eDebug.h"
 #include "eViewMode.h"
 
 using namespace std;
@@ -18,7 +19,7 @@ namespace sort
 	class QuickSortVisualizer
 	{
 	public:
-		static void VisualizeSorting(vector<int>& nums, ePivotPos pivotPos, eViewMode viewMode);
+		static void VisualizeSorting(vector<int>& nums, ePivotPos pivotPos, eViewMode viewMode, eDebug onOff);
 
 
 	private:
@@ -32,6 +33,8 @@ namespace sort
 		static void moveColorRight(vector<Node>& datas, int currRightIndex);
 		static void swapInt(Node& left, Node& right);
 
+	private:
 		static eViewMode sViewMode;
+		static eDebug sDebug;
 	};
 }

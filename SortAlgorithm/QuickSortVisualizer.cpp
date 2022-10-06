@@ -10,13 +10,15 @@ using namespace std;
 namespace sort
 {
 	eViewMode QuickSortVisualizer::sViewMode = eViewMode::ONE_BY_ONE;
+	eDebug QuickSortVisualizer::sDebug = eDebug::OFF;
 
-	void QuickSortVisualizer::VisualizeSorting(vector<int>& nums, ePivotPos pivotPos, eViewMode viewMode)
+	void QuickSortVisualizer::VisualizeSorting(vector<int>& nums, ePivotPos pivotPos, eViewMode viewMode, eDebug onOff)
 	{
 		vector<Node> datas;
 		datas.reserve(nums.size());
 
 		sViewMode = viewMode;
+		sDebug = onOff;
 
 		for (size_t i = 0; i < nums.size(); ++i)
 		{
@@ -221,9 +223,12 @@ namespace sort
 			}
 		}
 
-		cout << "  Press the Enter to Continue ";
-		string trash;
-		getline(cin, trash);
+		if (sDebug == eDebug::OFF)
+		{
+			cout << "  Press the Enter to Continue ";
+			string trash;
+			getline(cin, trash);
+		}
 
 		if (sViewMode == eViewMode::ONE_BY_ONE)
 		{
