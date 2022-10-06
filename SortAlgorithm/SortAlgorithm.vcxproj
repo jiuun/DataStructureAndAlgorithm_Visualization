@@ -142,6 +142,7 @@
     <ClInclude Include="BubbleSortVisualizer.h" />
     <ClInclude Include="eColorType.h" />
     <ClInclude Include="eConsoleColor.h" />
+    <ClInclude Include="eDebug.h" />
     <ClInclude Include="eViewMode.h" />
     <ClInclude Include="InsertionSort.h" />
     <ClInclude Include="InsertionSortVisualizer.h" />

@@ -23,7 +23,9 @@
     <ClCompile Include="InsertionSortVisualizer.cpp">
       <Filter>InsertsionSort</Filter>
     </ClCompile>
-    <ClCompile Include="SelectionSortVisualizer.cpp" />
+    <ClCompile Include="SelectionSortVisualizer.cpp">
+      <Filter>SelectionSort</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="QuickSort.h">
@@ -56,7 +58,15 @@
     <ClInclude Include="InsertionSortVisualizer.h">
       <Filter>InsertsionSort</Filter>
     </ClInclude>
-    <ClInclude Include="SelectionSortVisualizer.h" />
+    <ClInclude Include="SelectionSortVisualizer.h">
+      <Filter>SelectionSort</Filter>
+    </ClInclude>
+    <ClInclude Include="eViewMode.h">
+      <Filter>Visualizer</Filter>
+    </ClInclude>
+    <ClInclude Include="eDebug.h">
+      <Filter>Visualizer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="QuickSort">
