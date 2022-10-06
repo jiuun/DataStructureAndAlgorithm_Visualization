@@ -22,7 +22,7 @@ namespace sort
 		{
 			datas.push_back(Node(nums[i], eColorType::QUICKSORT_DEFAULT));
 		}
-		PrintData(datas);
+		printData(datas);
 
 		switch (pivotPos)
 		{
@@ -61,25 +61,25 @@ namespace sort
 		for (int i = leftIndex; i < rightIndex; ++i)
 		{
 			datas[i].OnCurrnetIndex();
-			PrintData(datas);
+			printData(datas);
 
 			if (datas[i].GetData() < datas[pivotIndex].GetData())
 			{
 				++currLeftIndex;
 				moveColorLeft(datas, currLeftIndex);
 
-				PrintData(datas);
+				printData(datas);
 
 				swapInt(datas[currLeftIndex], datas[i]);
 
 				if (currLeftIndex != i)
 				{
-					PrintData(datas);
+					printData(datas);
 				}
 			}
 			else
 			{
-				PrintData(datas);
+				printData(datas);
 			}
 
 			datas[i].OffCurrnetIndex();
@@ -90,7 +90,7 @@ namespace sort
 		swapInt(datas[pivotIndex], datas[rightIndex]);
 		datas[pivotIndex].Complete();
 
-		PrintData(datas);
+		printData(datas);
 
 		visualizeSortingRecursive(datas, leftIndex, pivotIndex - 1);
 		visualizeSortingRecursive(datas, pivotIndex + 1, rightIndex);
@@ -115,25 +115,25 @@ namespace sort
 		for (int i = rightIndex; i > leftIndex; --i)
 		{
 			datas[i].OnCurrnetIndex();
-			PrintData(datas);
+			printData(datas);
 
 			if (datas[i].GetData() > datas[pivotIndex].GetData())
 			{
 				--currRightIndex;
 				moveColorRight(datas, currRightIndex);
 
-				PrintData(datas);
+				printData(datas);
 
 				swapInt(datas[currRightIndex], datas[i]);
 
 				if (currRightIndex != i)
 				{
-					PrintData(datas);
+					printData(datas);
 				}
 			}
 			else
 			{
-				PrintData(datas);
+				printData(datas);
 			}
 
 			datas[i].OffCurrnetIndex();
@@ -144,12 +144,12 @@ namespace sort
 		swapInt(datas[pivotIndex], datas[leftIndex]);
 		datas[pivotIndex].Complete();
 
-		PrintData(datas);
+		printData(datas);
 		visualizeSortingRecursiveLeftPivot(datas, leftIndex, pivotIndex - 1);
 		visualizeSortingRecursiveLeftPivot(datas, pivotIndex + 1, rightIndex);
 	}
 
-	void QuickSortVisualizer::PrintData(vector<Node>& datas)
+	void QuickSortVisualizer::printData(vector<Node>& datas)
 	{
 		for (size_t i = 0; i < datas.size(); ++i)
 		{

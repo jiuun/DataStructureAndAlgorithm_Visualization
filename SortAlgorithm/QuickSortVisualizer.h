@@ -3,6 +3,7 @@
 #include <vector>
 
 #include "Node.h"
+#include "eViewMode.h"
 
 using namespace std;
 
@@ -12,12 +13,6 @@ enum ePivotPos
 	RIGHT
 };
 
-enum eViewMode
-{
-	SEQUENCE,
-	ONE_BY_ONE
-};
-
 namespace sort
 {
 	class QuickSortVisualizer
@@ -25,9 +20,9 @@ namespace sort
 	public:
 		static void VisualizeSorting(vector<int>& nums, ePivotPos pivotPos, eViewMode viewMode);
 
-		static void PrintData(vector<Node>& datas);
 
 	private:
+		static void printData(vector<Node>& datas);
 		static void visualizeSortingRecursive(vector<Node>& datas, int leftIndex, int rightIndex);
 		static void visualizeSortingRecursiveLeftPivot(vector<Node>& datas, int leftIndex, int rightIndex);
 
