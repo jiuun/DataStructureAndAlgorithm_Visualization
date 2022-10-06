@@ -2,34 +2,26 @@
 
 #include <vector>
 
-#include "IVisualizer.h"
+#include "Node.h"
 
 using namespace std;
 
 namespace sort
 {
-	class QuickSortVisualizer : public IVisualizer
+	class QuickSortVisualizer
 	{
 	public:
 		void VisualizeSorting(vector<int>& nums);
 
-		void PrintData(vector<Node>& datas) const final;
-		void SetTextColor(Node& data, eBitSet bitSet, eColorType colorSet) final;
+		void PrintData(vector<Node>& datas) const;
 
 	private:
 		void visualizeSortingRecursive(vector<Node>& datas, int leftIndex, int rightIndex);
 
-		void setSleep(vector<Node>& datas, int leftIndex, int rightIndex);
+		void initNodes(vector<Node>& datas, int leftIndex, int rightIndex);
 
-		enum
-		{
-			Q_DEFAULT = 0b00000000,
-			Q_CURRENT = 0b00000001,
-			Q_LEFT = 0b00000010,
-			Q_RIGHT = 0b00000100,
-			Q_SLEEP = 0b00001000,
-			Q_COMPLETE = 0b00010000,
-			Q_INVISIBLE = 0b00100000
-		};
+		void moveLeft(vector<Node>& datas, int currLeftIndex);
+		void swapInt(Node& left, Node& right);
+
 	};
 }

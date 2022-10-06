@@ -8,6 +8,22 @@
     <ClCompile Include="QuickSortVisualizer.cpp">
       <Filter>QuickSort</Filter>
     </ClCompile>
+    <ClCompile Include="BubbleSort.cpp">
+      <Filter>BubbleSort</Filter>
+    </ClCompile>
+    <ClCompile Include="BubbleSortVisualizer.cpp">
+      <Filter>BubbleSort</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectionSort.cpp">
+      <Filter>SelectionSort</Filter>
+    </ClCompile>
+    <ClCompile Include="InsertionSort.cpp">
+      <Filter>InsertsionSort</Filter>
+    </ClCompile>
+    <ClCompile Include="InsertionSortVisualizer.cpp">
+      <Filter>InsertsionSort</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectionSortVisualizer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="QuickSort.h">
@@ -16,18 +32,31 @@
     <ClInclude Include="QuickSortVisualizer.h">
       <Filter>QuickSort</Filter>
     </ClInclude>
-    <ClInclude Include="eColorSet.h">
+    <ClInclude Include="eColorType.h">
       <Filter>Visualizer</Filter>
     </ClInclude>
     <ClInclude Include="Node.h">
       <Filter>Visualizer</Filter>
     </ClInclude>
-    <ClInclude Include="IVisualizer.h">
+    <ClInclude Include="eConsoleColor.h">
       <Filter>Visualizer</Filter>
     </ClInclude>
-    <ClInclude Include="eBitSet.h">
-      <Filter>Visualizer</Filter>
+    <ClInclude Include="BubbleSortVisualizer.h">
+      <Filter>BubbleSort</Filter>
     </ClInclude>
+    <ClInclude Include="BubbleSort.h">
+      <Filter>BubbleSort</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectionSort.h">
+      <Filter>SelectionSort</Filter>
+    </ClInclude>
+    <ClInclude Include="InsertionSort.h">
+      <Filter>InsertsionSort</Filter>
+    </ClInclude>
+    <ClInclude Include="InsertionSortVisualizer.h">
+      <Filter>InsertsionSort</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectionSortVisualizer.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="QuickSort">
@@ -35,6 +64,15 @@
     </Filter>
     <Filter Include="Visualizer">
       <UniqueIdentifier>{15f0523f-ff16-4a3f-bdcb-241334d2bf2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BubbleSort">
+      <UniqueIdentifier>{a9ad003c-2f85-4cc6-b482-a5a0dcedd671}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SelectionSort">
+      <UniqueIdentifier>{d6b3f964-98a8-423b-a157-f6c39c9077aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InsertsionSort">
+      <UniqueIdentifier>{8b14dca2-a201-4b1e-adb8-7843b33a2708}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
