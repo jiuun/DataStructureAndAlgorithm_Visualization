@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="QuickSort.cpp">
+      <Filter>QuickSort</Filter>
+    </ClCompile>
+    <ClCompile Include="QuickSortVisualizer.cpp">
+      <Filter>QuickSort</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="QuickSort.h">
+      <Filter>QuickSort</Filter>
+    </ClInclude>
+    <ClInclude Include="QuickSortVisualizer.h">
+      <Filter>QuickSort</Filter>
+    </ClInclude>
+    <ClInclude Include="eColorSet.h">
+      <Filter>Visualizer</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Visualizer</Filter>
+    </ClInclude>
+    <ClInclude Include="IVisualizer.h">
+      <Filter>Visualizer</Filter>
+    </ClInclude>
+    <ClInclude Include="eBitSet.h">
+      <Filter>Visualizer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="QuickSort">
+      <UniqueIdentifier>{8f127c24-8f80-4616-82fc-4dbbd60b8775}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Visualizer">
+      <UniqueIdentifier>{15f0523f-ff16-4a3f-bdcb-241334d2bf2e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
