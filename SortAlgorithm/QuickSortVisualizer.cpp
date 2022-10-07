@@ -9,9 +9,6 @@ using namespace std;
 
 namespace sort
 {
-	eViewMode QuickSortVisualizer::sViewMode = eViewMode::ONE_BY_ONE;
-	eDebug QuickSortVisualizer::sDebug = eDebug::OFF;
-
 	void QuickSortVisualizer::VisualizeSorting(vector<int>& nums, ePivotPos pivotPos, eViewMode viewMode, eDebug onOff)
 	{
 		vector<Node> datas;
@@ -48,6 +45,10 @@ namespace sort
 	{
 		if (leftIndex >= rightIndex)
 		{
+			if (rightIndex >= 0)
+			{
+				datas[rightIndex].Complete();
+			}
 			return;
 		}
 
@@ -70,12 +71,12 @@ namespace sort
 				++currLeftIndex;
 				moveColorLeft(datas, currLeftIndex);
 
-				printData(datas);
-
-				swapInt(datas[currLeftIndex], datas[i]);
-
 				if (currLeftIndex != i)
 				{
+					printData(datas);
+
+					swapInt(datas[currLeftIndex], datas[i]);
+
 					printData(datas);
 				}
 			}
@@ -102,7 +103,10 @@ namespace sort
 	{
 		if (leftIndex >= rightIndex)
 		{
-			datas[rightIndex].Complete();
+			if (rightIndex >= 0)
+			{
+				datas[rightIndex].Complete();
+			}
 			return;
 		}
 
@@ -124,12 +128,12 @@ namespace sort
 				--currRightIndex;
 				moveColorRight(datas, currRightIndex);
 
-				printData(datas);
-
-				swapInt(datas[currRightIndex], datas[i]);
-
 				if (currRightIndex != i)
 				{
+					printData(datas);
+
+					swapInt(datas[currRightIndex], datas[i]);
+
 					printData(datas);
 				}
 			}
@@ -189,7 +193,6 @@ namespace sort
 		for (size_t i = 0; i < datas.size(); ++i)
 		{
 			int data = datas[i].GetData();
-
 
 			if (datas[i].IsComplete())
 			{
@@ -265,12 +268,5 @@ namespace sort
 	{
 		datas[currRightIndex].SetColorType(eColorType::QUICKSORT_DEFAULT);
 		datas[currRightIndex - 1].SetColorType(eColorType::QUICKSORT_LEFT);
-	}
-
-	void QuickSortVisualizer::swapInt(Node& left, Node& right)
-	{
-		int temp = left.GetData();
-		left.SetData(right.GetData());
-		right.SetData(temp);
 	}
 }

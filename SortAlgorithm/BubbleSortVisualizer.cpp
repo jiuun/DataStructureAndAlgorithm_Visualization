@@ -8,9 +8,6 @@ using namespace std;
 
 namespace sort
 {
-	eViewMode BubbleSortVisualizer::sViewMode = eViewMode::SEQUENCE;
-	eDebug BubbleSortVisualizer::sDebug = eDebug::OFF;
-
 	void BubbleSortVisualizer::VisualizeSorting(std::vector<int>& nums, eViewMode viewMode, eDebug onOff)
 	{
 		vector<Node> datas;
@@ -47,6 +44,11 @@ namespace sort
 
 			datas[lastIndex - i].Complete();
 			printData(datas);
+		}
+
+		for (size_t i = 0; i < nums.size(); ++i)
+		{
+			nums[i] = datas[i].GetData();
 		}
 	}
 
@@ -105,12 +107,5 @@ namespace sort
 		{
 			system("cls");
 		}
-	}
-
-	void BubbleSortVisualizer::swapInt(Node& a, Node& b)
-	{
-		int temp = a.GetData();
-		a.SetData(b.GetData());
-		b.SetData(temp);
 	}
 }

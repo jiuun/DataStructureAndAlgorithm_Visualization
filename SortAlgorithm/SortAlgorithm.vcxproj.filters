@@ -26,6 +26,9 @@
     <ClCompile Include="SelectionSortVisualizer.cpp">
       <Filter>SelectionSort</Filter>
     </ClCompile>
+    <ClCompile Include="Visualizer.cpp">
+      <Filter>Visualizer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="QuickSort.h">
@@ -65,6 +68,9 @@
       <Filter>Visualizer</Filter>
     </ClInclude>
     <ClInclude Include="eDebug.h">
+      <Filter>Visualizer</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualizer.h">
       <Filter>Visualizer</Filter>
     </ClInclude>
   </ItemGroup>

@@ -136,6 +136,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="SelectionSort.cpp" />
     <ClCompile Include="SelectionSortVisualizer.cpp" />
+    <ClCompile Include="Visualizer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BubbleSort.h" />
@@ -151,6 +152,7 @@
     <ClInclude Include="QuickSortVisualizer.h" />
     <ClInclude Include="SelectionSort.h" />
     <ClInclude Include="SelectionSortVisualizer.h" />
+    <ClInclude Include="Visualizer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

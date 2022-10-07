@@ -2,9 +2,7 @@
 
 #include <vector>
 
-#include "Node.h"
-#include "eDebug.h"
-#include "eViewMode.h"
+#include "Visualizer.h"
 
 using namespace std;
 
@@ -16,7 +14,7 @@ enum ePivotPos
 
 namespace sort
 {
-	class QuickSortVisualizer
+	class QuickSortVisualizer : public Visualizer
 	{
 	public:
 		static void VisualizeSorting(vector<int>& nums, ePivotPos pivotPos, eViewMode viewMode, eDebug onOff);
@@ -31,10 +29,5 @@ namespace sort
 
 		static void moveColorLeft(vector<Node>& datas, int currLeftIndex);
 		static void moveColorRight(vector<Node>& datas, int currRightIndex);
-		static void swapInt(Node& left, Node& right);
-
-	private:
-		static eViewMode sViewMode;
-		static eDebug sDebug;
 	};
 }
