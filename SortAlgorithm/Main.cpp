@@ -10,6 +10,9 @@
 #include "QuickSort.h"
 #include "QuickSortVisualizer.h"
 
+#include "ArrayList.h"
+#include "Queue.h"
+#include "Stack.h"
 
 int main()
 {
@@ -59,7 +62,7 @@ int main()
 
     //sort::QuickSort::Sort(arr1);
 
-    sort::QuickSortVisualizer::VisualizeSorting(arr1, ePivotPos::RIGHT, eViewMode::SEQUENCE, eDebug::OFF);
+    //sort::QuickSortVisualizer::VisualizeSorting(arr1, ePivotPos::RIGHT, eViewMode::SEQUENCE, eDebug::OFF);
     //sort::QuickSortVisualizer::VisualizeSorting(arr2, ePivotPos::RIGHT, eViewMode::ONE_BY_ONE, eDebug::OFF);
     //sort::QuickSortVisualizer::VisualizeSorting(arr3, ePivotPos::RIGHT, eViewMode::SEQUENCE, eDebug::OFF);
     
@@ -72,4 +75,11 @@ int main()
     //sort::QuickSortVisualizer::VisualizeSorting(arr2, ePivotPos::LEFT, eViewMode::SEQUENCE, eDebug::OFF);
     //sort::QuickSortVisualizer::VisualizeSorting(arr3, ePivotPos::LEFT, eViewMode::SEQUENCE, eDebug::OFF);
 
+#ifdef _DEBUG
+    {
+        linear::ArrayList::Test();
+        linear::Queue::Test();
+        linear::Stack::Test();
+    }
+#endif
 }

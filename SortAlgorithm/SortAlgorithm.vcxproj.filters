@@ -29,6 +29,9 @@
     <ClCompile Include="Visualizer.cpp">
       <Filter>Visualizer</Filter>
     </ClCompile>
+    <ClCompile Include="HeapSort.cpp">
+      <Filter>HeapSort</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="QuickSort.h">
@@ -73,6 +76,9 @@
     <ClInclude Include="Visualizer.h">
       <Filter>Visualizer</Filter>
     </ClInclude>
+    <ClInclude Include="HeapSort.h">
+      <Filter>HeapSort</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="QuickSort">
@@ -89,6 +95,9 @@
     </Filter>
     <Filter Include="InsertsionSort">
       <UniqueIdentifier>{8b14dca2-a201-4b1e-adb8-7843b33a2708}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HeapSort">
+      <UniqueIdentifier>{afaf7da5-0cdc-48db-be87-da6b9f8f9f97}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
