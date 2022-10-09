@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ExternalIncludePath>E:\POCU\DataStructureAndAlgorithm_Visualization\LinearDataStructure;$(ExternalIncludePath)</ExternalIncludePath>
-    <LibraryPath>E:\POCU\DataStructureAndAlgorithm_Visualization\x64\Debug;$(LibraryPath)</LibraryPath>
+    <ExternalIncludePath>..\..\DataStructureAndAlgorithm_Visualization\LinearDataStructure;$(ExternalIncludePath)</ExternalIncludePath>
+    <LibraryPath>..\..\DataStructureAndAlgorithm_Visualization\x64\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -108,12 +108,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\DataStructureAndAlgorithm_Visualization\LinearDataStructure;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\DataStructureAndAlgorithm_Visualization\LinearDataStructure;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\DataStructureAndAlgorithm_Visualization\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\DataStructureAndAlgorithm_Visualization\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>LinearDataStructure.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

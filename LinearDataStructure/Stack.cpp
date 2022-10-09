@@ -47,7 +47,7 @@ namespace linear
 			return -1;
 		}
 
-		return mDatas[mCount--];
+		return mDatas[--mCount];
 	}
 
 	int Stack::Top() const
@@ -57,7 +57,7 @@ namespace linear
 			return -1;
 		}
 
-		return mDatas[mCount];
+		return mDatas[mCount - 1];
 	}
 
 	void Stack::Test()
