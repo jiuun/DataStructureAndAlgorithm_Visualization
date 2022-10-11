@@ -115,9 +115,6 @@ namespace linear
 #ifdef _DEBUG
 	void Queue::Test()
 	{
-		_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-		//_CrtSetBreakAlloc(179);
-
 		const size_t TEST_COUNT = 17;
 
 

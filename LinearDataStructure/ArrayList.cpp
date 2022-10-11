@@ -153,8 +153,6 @@ namespace linear
 #ifdef _DEBUG
 	void ArrayList::Test()
 	{
-		_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-
 		// constructor, destructor test
 		{
 			ArrayList* arr;
